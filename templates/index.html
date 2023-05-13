@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section data-bs-version="5.1" class="header1 cid-s48MCQYojq mbr-fullscreen mbr-parallax-background" id="header1-f">
+
+    
+
+    <div class="mbr-overlay" style="opacity: 0.8; background-color: rgb(255, 255, 255);"></div>
+
+    <div class="align-center container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-8">
+                <h1 class="mbr-section-title mbr-fonts-style mb-3 display-1"><strong>Farm AI</strong></h1>
+                
+                <p class="mbr-text mbr-fonts-style display-7">
+                    The Farm.ai system is an innovative solution that provides farmers and the agriculture industry with a powerful set of tools to optimize crop yield and improve the efficiency of their operations. By integrating cutting-edge technologies such as weed detection, plant disease detection, and crop recommender, the Farm.ai system provides valuable insights into crop health and growth patterns.&nbsp;</p>
+                <div class="mbr-section-btn mt-3"><a class="btn btn-black display-4" href="{{ url_for('weeds_detection_form')}}">Weeds Detection</a><a class="btn btn-black display-4" href="{{ url_for('disease_detection_form')}}">Disease Classification</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="content1 cid-s48udlf8KU" id="content1-8">
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="title col-12 col-md-9">
+                <h3 class="mbr-section-title mbr-fonts-style align-center mb-4 display-2"><strong>Importance of this System</strong></h3>
+                <h4 class="mbr-section-subtitle align-center mbr-fonts-style mb-4 display-7">
+                    Farm.ai system with weed detection, plant disease detection, and crop recommender can be a valuable tool for farmers and agriculture industry. Weed detection can help farmers identify and remove unwanted plants, which can save time and resources. Plant disease detection can help farmers catch potential problems early and take corrective action to prevent crop loss. The crop recommender can assist farmers in selecting the most appropriate crop for their land and environmental conditions, increasing crop yield and profit. By combining these three features, the farm.ai system can help farmers make informed decisions about crop management, reducing labor and input costs, increasing efficiency, and ultimately leading to a more sustainable and profitable agriculture industry.&nbsp;</h4>
+                
+            </div>
+        </div>
+    </div>
+</section> 
+  
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container" style="padding-top:150px">
+
+
+<section data-bs-version="5.1" class="content4 cid-tcjgXb94Sd" id="content4-z">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="title col-md-12 col-lg-10">            
+                <h3 class="mbr-section-title mbr-fonts-style align-center mb-4 display-2"><strong>Army Uniform Detection and classification</strong></h3>
+                <h4 class="mbr-fonts-style align-center mb-4"><strong>We are able to weeds.</strong></h4>
+            </div>
+        </div>
+    </div>
+</section>
+<form method="post" action="{{ url_for('weeds_detect_image')}}" enctype="multipart/form-data">
+    <span></span>
+<input type="file" id="imageinput" name="image" class="form-control form-control-lg" style="width:50%" >
+<span></span>
+<br>
+<br>
+<button type="submit" class="btn btn-black display-4" value="Predict">Detect weeds</button>
+</form>
+<button  class="btn btn-black display-4" value="Use Camera"> <a href="{{ url_for('weeds_detect_camera') }}" style="text-decoration: none;color:white">Use Camera weeds</a></button>
+
+
+{% if predicted  %}
+
+<section data-bs-version="5.1" class="content4 cid-tcjgXb94Sd" id="content4-z">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="row justify-content-center">
+                <h3 class="mbr-section-title mbr-fonts-style align-center mb-4 display-2"><strong>Output of detection image.</strong></h3>
+                <div class="title col-md-12">
+                    <img src="/static/predicted_images/{{filename}}">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% elif not predicted %}
+{% endif %}
+</div>
+{% endblock %}
