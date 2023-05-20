@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container" style="padding-top:150px">
+
+  
+
+
+<section data-bs-version="5.1" class="content4 cid-tcjgXb94Sd" id="content4-z">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="title col-md-12 col-lg-10">            
+                <h3 class="mbr-section-title mbr-fonts-style align-center mb-4 display-2"><strong>Crop Recommender</strong></h3>
+                <h4 class="mbr-fonts-style align-center mb-4"><strong>Able to Recommend crop on the basis of soil conditions</strong></h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+<form method="post" action="{{ url_for('recommend_crop_value')}}" enctype="multipart/form-data">
+    <div class="form-row">
+        <div class="mbr-fonts-style mb-4">Nitrogen Value
+          <br><input class="form-control form-control-lg" style="width:50%" type="number" name="N" placeholder="ratio of Nitrogen content in soil">
+        </div>
+        <div class="mbr-fonts-style mb-4">Phosphorous value
+            <input class="form-control form-control-lg" style="width:50%" type="number" name="P" placeholder="ratio of Phosphorous content in soil">
+          </div>
+        <div class="mbr-fonts-style mb-4">Potassium value
+            <input class="form-control form-control-lg" style="width:50%" type="number" name="K" placeholder="ratio of Potassium content in soil">
+          </div>
+        <div class="mbr-fonts-style mb-4">Temperature
+            <input class="form-control form-control-lg" style="width:50%" type="number" name="temperature" placeholder="temperature in degree Celsius">
+          </div>
+        <div class="mbr-fonts-style mb-4">Humidity
+            <input class="form-control form-control-lg" style="width:50%" type="number" name="humidity" placeholder="relative humidity in %">
+          </div>
+        <div class="mbr-fonts-style mb-4">Ph
+            <input class="form-control form-control-lg" style="width:50%" type="number" name="ph" max="14" placeholder="ph value of the soil">
+          </div>
+        <div class="mbr-fonts-style mb-4">Rainfall
+            <input class="form-control form-control-lg" style="width:50%" type="number" name="rainfall" placeholder="rainfall in mm">
+          </div>
+      </div>
+<span></span>
+<br>
+<br>
+<button type="submit" class="btn btn-black display-4" value="Predict">Recommend Crop</button>
+</form>
+
+
+{% if predicted  %}
+
+<section data-bs-version="5.1" class="content4 cid-tcjgXb94Sd" id="content4-z">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="row justify-content-center">
+                <h3 class="mbr-section-title mbr-fonts-style align-center mb-4 display-2"><strong>Predicted Class:- {{class_predicted}} </strong></h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% elif not predicted %}
+{% endif %}
+</div>
+{% endblock %}

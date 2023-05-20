@@ -14,9 +14,8 @@ model_image = keras.models.load_model('model.h5')
 
 def getPredictionWeeds(name):
     res = ''.join(random.choices(string.ascii_uppercase + string.digits, k=7))
-    result = model.predict(name, confidence=40, overlap=30)
     os.chdir('/workspace/farm.ai/static/predicted_images')
-    result.save("{}.jpg".format(res))
+    model.predict('/workspace/farm.ai/'+name, confidence=40, overlap=30).save("{}.jpg".format(res))
     os.chdir('/workspace/farm.ai')
     return "{}.jpg".format(res)
 
@@ -26,4 +25,3 @@ def getPredictionDisease(img):
     img = np.reshape(img, (1, 64, 64, 3))
     prediction = model_image.predict(img)
     return disease_types[np.argmax(prediction)]
-
